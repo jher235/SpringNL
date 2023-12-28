@@ -2,6 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Exam exam = new NewlecExam(); <-이 형태를 xml로 지시한 코드이다. -->
+	<bean id="exam" class = "Spring.di.entity.NewlecExam"></bean>
+	<!-- ExamConsole console = new GridExamConsole(exam); -->
+	<bean id="console" class="Spring.di.ui.GridExamConsole">
+		<!-- console.setExam(exam); 아래에 name은 setName을 의미하지만 set을 생략한 것이다. 밸류형인지 레퍼런스형인지에 따라서 value, ref에 넣어준다. exam은 참조형이므로 ref-->
+		<property name="exam" ref="exam"></property>
+	</bean>
+	
+	
 
-
+	
 </beans>
+
