@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:p="http://www.springframework.org/schema/p"			
 	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
+	
+	<context:annotation-config/><!-- 네임스페이스에서 context를 가져옴. 객체들 안에 어노테이션을 확인하라는 것 -->
 	<!-- Exam exam = new NewlecExam(); <-이 형태를 xml로 지시한 코드이다. -->
 	
 	<!-- p를 사용한 생성자 코드, setter로 값을 설정함 -->
-	<bean id="exam" class = "Spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30"/>
+	<bean id="exam1" class = "Spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30"/>
+	<bean id="exam2" class="Spring.di.entity.NewlecExam" p:kor="10" p:eng="10" p:math="10"/>
 	
 	<!-- <bean id="exam" class = "Spring.di.entity.NewlecExam">
 		setter를 통해 값을 설정
@@ -29,19 +34,21 @@
 	<!-- ExamConsole console = new GridExamConsole(exam); -->
 	<bean id="console" class="Spring.di.ui.inlineExamConsole">
 		<!-- console.setExam(exam); 아래에 name은 setName을 의미하지만 set을 생략한 것이다. 밸류형인지 레퍼런스형인지에 따라서 value, ref에 넣어준다. exam은 참조형이므로 ref-->
-		<property name="exam" ref="exam"></property>
-	</bean>
-	<bean id="console1" class="Spring.di.ui.GridExamConsole">
-		<!-- setter를 통해 추가한 것  -->
-		<property name="exam" ref="exam"></property>
+		<!-- <property name="exam" ref="exam"></property> -->
+		
 	</bean>
 	
+	<!-- <bean id="console1" class="Spring.di.ui.GridExamConsole">
+		setter를 통해 추가한 것 
+		<property name="exam" ref="exam"></property>
+	</bean> -->
+	
 	<!-- 네임스페이스로 util을 가져옴. 객체를 직접 생성함 -->
-	<util:list id="exams" list-class="java.util.ArrayList">
-		<!--bean은 내가 직접 만들어서 리스트에 대입한 것이고 ref는 위의 id가 exam인 bean을 참조하여 가져온 것이다. -->
+	<!-- <util:list id="exams" list-class="java.util.ArrayList">
+		bean은 내가 직접 만들어서 리스트에 대입한 것이고 ref는 위의 id가 exam인 bean을 참조하여 가져온 것이다.
 			<bean class = "Spring.di.entity.NewlecExam" p:kor="1" p:eng="1" p:math="1"/>
 		<ref bean="exam"/>
-	</util:list>
+	</util:list> -->
 	
 	<!-- 아래 방식은 생성자에 목록을 추가하여 만드는 것이다. 목록을 세팅할 때 사용하며 자체가 객체를 만들진 못함 -->
 <!-- 	<bean id="exams" class="java.util.ArrayList">
