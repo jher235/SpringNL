@@ -25,6 +25,10 @@ public class Program {
 		
 //		ExamConsole console = (ExamConsole) context.getBean("console");
 		//ExamConsole console = context.getBean(ExamConsole.class);
+		
+		Exam exam = context.getBean(Exam.class);
+		System.out.println(exam.toString());
+		
 		ExamConsole console = context.getBean(GridExamConsole.class);
 		console.print();
 	}

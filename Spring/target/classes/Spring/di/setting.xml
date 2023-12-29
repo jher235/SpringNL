@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Exam exam = new NewlecExam(); <-이 형태를 xml로 지시한 코드이다. -->
-	<bean id="exam" class = "Spring.di.entity.NewlecExam">
-		<property name="kor">
+	
+	<bean id="exam" class = "Spring.di.entity.NewlecExam" p:kor="10" p:eng="20"/>
+	
+	<!-- <bean id="exam" class = "Spring.di.entity.NewlecExam">
+		setter를 통해 값을 설정
+		 <property name="kor">
 			<value>20</value>
 		</property>
 		<property name="eng" value="50"></property>
 		<property name="math" value="40"></property>
 		
-	</bean>
+		오버라이드한 생성자를 통해 값을 설정 태그에 type을 사용해서 자료형을 구별해줄 수도 있음 ex)type="float"
+		<constructor-arg index="0" value="10"/>
+		<constructor-arg name="eng" value="20"/>
+		<constructor-arg name="com" value="30"/>
+		<constructor-arg index="2" value="40"/>
+	</bean> -->
+	
 	<!-- ExamConsole console = new GridExamConsole(exam); -->
 	<bean id="console" class="Spring.di.ui.inlineExamConsole">
 		<!-- console.setExam(exam); 아래에 name은 setName을 의미하지만 set을 생략한 것이다. 밸류형인지 레퍼런스형인지에 따라서 value, ref에 넣어준다. exam은 참조형이므로 ref-->
