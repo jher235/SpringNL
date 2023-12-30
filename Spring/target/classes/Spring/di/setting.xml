@@ -13,9 +13,9 @@
 	<!-- Exam exam = new NewlecExam(); <-이 형태를 xml로 지시한 코드이다. -->
 	
 	<!-- p를 사용한 생성자 코드, setter로 값을 설정함 -->
-	<bean id="exam1" class = "Spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30"/>
+	<!-- <bean id="exam1" class = "Spring.di.entity.NewlecExam" p:kor="10" p:eng="20" p:math="30"/>
 	<bean id="exam2" class="Spring.di.entity.NewlecExam" p:kor="10" p:eng="10" p:math="10"/>
-	
+	 -->
 	<!-- <bean id="exam" class = "Spring.di.entity.NewlecExam">
 		setter를 통해 값을 설정
 		 <property name="kor">
