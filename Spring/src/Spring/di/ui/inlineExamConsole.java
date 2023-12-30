@@ -2,13 +2,15 @@ package Spring.di.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import Spring.di.entity.Exam;
 
+@Component("console") //id. program.java파일에서 console로 명명한 부분
 public class inlineExamConsole implements ExamConsole {
 	
-	@Autowired(required = false) //기본생성자를 호출하면서 인젝션 됨.
-	@Qualifier("exam1")
+	@Autowired(required = true) //기본생성자를 호출하면서 인젝션 됨. required=false는 xml에 해당하는 bean이 없더라도 일단 진행하는 것.
+	//@Qualifier("exam1")
 	private Exam exam;
 	
 	public inlineExamConsole() {

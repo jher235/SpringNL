@@ -9,7 +9,8 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
 	
-	<context:annotation-config/><!-- 네임스페이스에서 context를 가져옴. 객체들 안에 어노테이션을 확인하라는 것 -->
+	<context:component-scan base-package="Spring.di.ui, Spring.di.entity"/>
+	<!-- <context:annotation-config/> --> <!-- 네임스페이스에서 context를 가져옴. 객체들 안에 어노테이션을 확인하라는 것 -->
 	<!-- Exam exam = new NewlecExam(); <-이 형태를 xml로 지시한 코드이다. -->
 	
 	<!-- p를 사용한 생성자 코드, setter로 값을 설정함 -->
@@ -32,11 +33,12 @@
 	</bean> -->
 	
 	<!-- ExamConsole console = new GridExamConsole(exam); -->
-	<bean id="console" class="Spring.di.ui.inlineExamConsole">
-		<!-- console.setExam(exam); 아래에 name은 setName을 의미하지만 set을 생략한 것이다. 밸류형인지 레퍼런스형인지에 따라서 value, ref에 넣어준다. exam은 참조형이므로 ref-->
-		<!-- <property name="exam" ref="exam"></property> -->
+	
+	<!-- <bean id="console" class="Spring.di.ui.inlineExamConsole">
+		console.setExam(exam); 아래에 name은 setName을 의미하지만 set을 생략한 것이다. 밸류형인지 레퍼런스형인지에 따라서 value, ref에 넣어준다. exam은 참조형이므로 ref
+		<property name="exam" ref="exam"></property>
 		
-	</bean>
+	</bean> -->
 	
 	<!-- <bean id="console1" class="Spring.di.ui.GridExamConsole">
 		setter를 통해 추가한 것 

@@ -1,0 +1,6 @@
+Spring\di\ui\ExamConsole.class
+Spring\di\entity\Exam.class
+Spring\di\ui\inlineExamConsole.class
+Spring\di\Program.class
+Spring\di\entity\NewlecExam.class
+Spring\di\ui\GridExamConsole.class
