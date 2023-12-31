@@ -1,6 +1,7 @@
 package Spring.di;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import Spring.di.entity.Exam;
@@ -18,7 +19,13 @@ public class Program {
 		console.setExam(exam);
 		*/
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/setting.xml");
+//		ApplicationContext context = new ClassPathXmlApplicationContext("spring/di/setting.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(NewlecDIConfig.class);
+//		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+//		ctx.register(NewlecDIConfig.class);이런 방법으로도 가능함.
+//		ctx.register(AppConfig.class,OtherConfig.class);
+//		ctx.refresh();
+		
 		
 //		ExamConsole console = (ExamConsole) context.getBean("console");
 		//ExamConsole console = context.getBean(ExamConsole.class);

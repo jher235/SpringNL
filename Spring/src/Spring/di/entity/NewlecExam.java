@@ -2,8 +2,10 @@ package Spring.di.entity;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+@Service // 컴포넌트 안에 포함 된 조금 더 세분화 된 역할 서비스, 컨트롤러, 리포시토리 3가지가 있음.
 public class NewlecExam implements Exam {
 	
 	@Value("20")

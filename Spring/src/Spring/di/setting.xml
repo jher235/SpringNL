@@ -7,7 +7,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-	
+			
 	
 	<context:component-scan base-package="Spring.di.ui, Spring.di.entity"/>
 	<!-- <context:annotation-config/> --> <!-- 네임스페이스에서 context를 가져옴. 객체들 안에 어노테이션을 확인하라는 것 -->
