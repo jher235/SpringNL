@@ -15,6 +15,7 @@ public class Program {
 	public static void main(String[] args) {
 		
 		
+		
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/aop/setting.xml");
 		
 		Exam exam = (Exam) context.getBean("exam");
