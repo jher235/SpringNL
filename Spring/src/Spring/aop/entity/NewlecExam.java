@@ -68,6 +68,10 @@ public class NewlecExam implements Exam {
 	@Override
 	public int total() {
 		
+		if(kor>100) 
+			throw new IllegalArgumentException("유효하지 않은 국어 점수");
+		
+		
 //		long start = System.currentTimeMillis();
 		int result = kor+eng+math+com;
 		

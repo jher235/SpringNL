@@ -9,15 +9,21 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 			
 	
-	<bean id="target" class = "Spring.aop.entity.NewlecExam" p:kor="1" p:eng="1" p:math="1" p:com="1"/>
+	<bean id="target" class = "Spring.aop.entity.NewlecExam" p:kor="101" p:eng="1" p:math="1" p:com="1"/>
 	<bean id="LogAroundAdvice" class="Spring.aop.advice.LogAroundAdvice"/>
 	<bean id="LogBeforeAdvice" class="Spring.aop.advice.LogBeforeAdvice"/>
+	<bean id="LogAfterReturningAdvice" class="Spring.aop.advice.LogAfterReturningAdvice"/>
+	<bean id="LogAfterThrowingAdvice" class="Spring.aop.advice.LogAfterThrowingAdvice"/>
+	
 	<bean id="exam" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="target" ref="target"/>
 		<property name="interceptorNames"><!-- 핸들러 -->
 			<list>
+			
 				<value>LogAroundAdvice</value><!-- 리스트가 참조형이므로 벨류를 id로 준다. -->
 				<value>LogBeforeAdvice</value>
+				<value>LogAfterReturningAdvice</value>
+				<value>LogAfterThrowingAdvice</value>
 			</list>
 		</property>
 	</bean>

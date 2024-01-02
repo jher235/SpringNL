@@ -17,10 +17,10 @@ public class Program {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/aop/setting.xml");
 		
-		Exam proxy = (Exam) context.getBean("exam");
+		Exam exam = (Exam) context.getBean("exam");
 		
-		System.out.printf("total is %d\n", proxy.total());
-		System.out.printf("total is %f\n", proxy.avg());
+		System.out.printf("total is %d\n", exam.total());
+		System.out.printf("total is %f\n", exam.avg());
 		//ApplicationContext context = new AnnotationConfigApplicationContext(NewlecDIConfig.class);
 		
 //		final Exam exam = new NewlecExam(1,1,1,1);
