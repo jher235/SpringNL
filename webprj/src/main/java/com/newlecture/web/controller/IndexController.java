@@ -13,12 +13,13 @@ public class IndexController implements Controller{
 		// TODO Auto-generated method stub
 		System.out.println("index controller");
 		
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("data","Hello Spring MVC!!");
-		mv.setViewName("/WEB-INF/view/index.jsp");//절대경로
+//		mv.setViewName("/WEB-INF/view/index.jsp");//절대경로
 //		mv.setViewName("WEB-INF/view/index.jsp");//상대경로
 		
 		return mv;
+		
 	}
 
 }

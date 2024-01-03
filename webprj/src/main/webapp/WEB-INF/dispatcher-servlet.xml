@@ -7,8 +7,12 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="/index" class="com.newlecture.web.controller.IndexController">  
-        <!-- collaborators and configuration for this bean go here -->
+    <bean name="/index" class="com.newlecture.web.controller.IndexController"/>  
+
+    
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="prefix" value="/WEB-INF/view/"></property>
+    	<property name="suffix" value=".jsp"></property>
     </bean>
 
  
