@@ -3,7 +3,13 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-  <definition name="notice.*" template="/WEB-INF/view/customer/Inc/layout.jsp">
+	<definition name="root.*" template="/WEB-INF/view/Inc/layout.jsp">		<!-- 그냥 .으로두면 모두 통과하거나 무한루프에 빠질 수 있다. 그래서 root.으로 경로를 지정한다 -->
+    <put-attribute name="title" value="공지사항" />
+    <put-attribute name="header" value="/WEB-INF/view/Inc/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/view/{1}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/view/Inc/footer.jsp" />
+  </definition>
+  <definition name="notice.*" template="/WEB-INF/view/customer/Inc/layout.jsp">		<!-- 와일드 카드 사용중 -->
     <put-attribute name="title" value="공지사항" />
     <put-attribute name="header" value="/WEB-INF/view/Inc/header.jsp" />
     <put-attribute name="visual" value="/WEB-INF/view/customer/Inc/visual.jsp" />
