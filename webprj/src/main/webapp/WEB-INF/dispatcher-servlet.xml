@@ -12,6 +12,8 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean name="/index" class="com.newlecture.web.controller.IndexController"/>  
+    <bean name="/notice/list" class="com.newlecture.web.controller.notice.ListController"/>  
+    
 
     
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
