@@ -17,7 +17,7 @@ public class IndexController implements Controller{
 		
 		ModelAndView mv = new ModelAndView("root.index");
 
-		mv.addObject("data","Hello Spring MVC!!");
+		mv.addObject("data","Hello Spring MVC!! ");
 //		mv.setViewName("/WEB-INF/view/index.jsp");//절대경로
 //		mv.setViewName("WEB-INF/view/index.jsp");//상대경로
 		

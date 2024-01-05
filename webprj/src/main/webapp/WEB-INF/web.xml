@@ -7,9 +7,28 @@
   version="4.0"
   metadata-complete="true">
   
+   <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/spring/service-context.xml
+			/WEB-INF/spring/security-context.xml
+		</param-value>
+	</context-param>
+
+  
+  
   <servlet>
   	<servlet-name>dispatcher</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup><!-- 올라가는 순서 -->
+  	<async-supported>true</async-supported><!-- 비동기적으로 로드함 -->
   </servlet>
   <servlet-mapping>		<!-- 주소를 맵핑하기위함 -->
   	<servlet-name>dispatcher</servlet-name>
