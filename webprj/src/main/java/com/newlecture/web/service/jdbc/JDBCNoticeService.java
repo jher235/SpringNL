@@ -12,9 +12,14 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.service.NoticeService;
 
+@Service
 public class JDBCNoticeService implements NoticeService {
 //	private String url = "jdbc:oracle:thin:@localhost:1521/xepdb1";
 //	private String url = "jdbc:mysql://localhost:3306/newlec?serverTimezone=UTC";
@@ -23,13 +28,15 @@ public class JDBCNoticeService implements NoticeService {
 //	private String driver = "com.mysql.cj.jdbc.Driver";
 //	private String driver = "oracle.jdbc.driver.OracleDriver";
 	
+	
+	@Autowired
 	private DataSource datasource;
 
 
 	
-	public void setDatasource(DataSource datasource) {
-		this.datasource = datasource;
-	}
+//	public void setDatasource(DataSource datasource) {
+//		this.datasource = datasource;
+//	}
 
 	public List<Notice> getList(int page, String field, String query) throws ClassNotFoundException, SQLException{
 		

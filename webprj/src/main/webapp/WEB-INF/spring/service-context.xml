@@ -12,9 +12,12 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	
-	 <bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
+	  <!-- <context:annotation-config/> -->
+	  <context:component-scan base-package="com.newlecture.web.service"/>
+	
+	<!--  <bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
  		<property name="datasource" ref="DataSource"></property>
- 	</bean>
+ 	</bean> -->
  	
  	<bean id="DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
  		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>

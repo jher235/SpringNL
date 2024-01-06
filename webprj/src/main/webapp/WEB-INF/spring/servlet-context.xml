@@ -10,11 +10,16 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
+       
+       <!-- <context:annotation-config/> -->
+	  <context:component-scan base-package="com.newlecture.web"/>
 
-	<bean name="/index" class="com.newlecture.web.controller.IndexController"/>  
-    <bean name="/notice/list" class="com.newlecture.web.controller.notice.ListController">
-    	<property name="noticeService" ref="noticeService"/>		<!-- ref의 노티스서비스는 하단의 id=노티스 서비스를 가져온 것 -->
-    </bean>  
+	<!-- <bean name="/index" class="com.newlecture.web.controller.IndexController"/>  --> 
+	
+   <!--  <bean name="/notice/list" class="com.newlecture.web.controller.notice.ListController">
+    	<property name="noticeService" ref="noticeService"/>		ref의 노티스서비스는 하단의 id=노티스 서비스를 가져온 것
+    </bean>   -->
+    
     <bean name="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/> 
 
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -40,10 +45,12 @@
     
     
     <mvc:resources location="/static/" mapping="/**"></mvc:resources>
+    <mvc:annotation-driven/>
     
-   <bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
+    
+   <!-- <bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService">
  		<property name="datasource" ref="DataSource"></property>
- 	</bean>
+ 	</bean> -->
  	
  	<bean id="DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
  		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
