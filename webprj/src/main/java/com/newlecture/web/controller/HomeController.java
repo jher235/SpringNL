@@ -4,21 +4,40 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+
+
 @Controller
-public class IndexController {
+public class HomeController {
 	
 	@RequestMapping("/index")
-	public void aaaa() {
-		System.out.println("aa");
-		System.out.println("aa");
-		System.out.println("aa");
-		System.out.println("aa");
-		System.out.println("aa");
-		System.out.println("aa");
+	public String index() {
+		
+		return "root.index";
 	}
 	
 
 }
+
+
+
+
+
+
+//@Controller
+//public class IndexController {
+//	
+//	@RequestMapping("/index")
+//	public void aaaa() {
+//		System.out.println("aa");
+//		System.out.println("aa");
+//		System.out.println("aa");
+//		System.out.println("aa");
+//		System.out.println("aa");
+//		System.out.println("aa");
+//	}
+//	
+//
+//}
 
 
 

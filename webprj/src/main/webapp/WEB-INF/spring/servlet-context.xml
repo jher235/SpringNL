@@ -12,7 +12,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
        
        <!-- <context:annotation-config/> -->
-	  <context:component-scan base-package="com.newlecture.web"/>
+	  <context:component-scan base-package="com.newlecture.web.controller"/>
 
 	<!-- <bean name="/index" class="com.newlecture.web.controller.IndexController"/>  --> 
 	
@@ -20,7 +20,7 @@
     	<property name="noticeService" ref="noticeService"/>		ref의 노티스서비스는 하단의 id=노티스 서비스를 가져온 것
     </bean>   -->
     
-    <bean name="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/> 
+  <!--   <bean name="/notice/detail" class="com.newlecture.web.controller.notice.DetailController"/> --> 
 
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
